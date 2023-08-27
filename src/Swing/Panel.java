@@ -16,17 +16,19 @@ import Player.Player;
 public class Panel extends JPanel implements ActionListener, KeyListener {
     static final int Panel_WIDTH = 1280;
     static final int Panel_HEIGHT = 720;
-    PlayerImage playerImage = new PlayerImage();
-    private final Image[] playerImg = playerImage.loadImages();
     private final Input input;
     private final Event event;
     public final Player player;
+    private static final Image[] playerImg;
+    static {
+        PlayerImage playerImage = new PlayerImage();
+        playerImg = playerImage.loadImages();
+    }
     public Panel() {
-        addKeyListener(this);
-        this.setFocusable(true);
         player = new Player(0, 0);
         input = new Input(this);
         event = new Event(this);
+        addKeyListener(this);
         Timer timer = new Timer(16, this);
         timer.start();
     }

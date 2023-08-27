@@ -12,6 +12,7 @@ public class Frame extends JFrame {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         this.add(panel);
+        panel.setFocusable(true);
 
         this.pack();
         this.setResizable(false);
