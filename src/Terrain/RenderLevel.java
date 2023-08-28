@@ -7,7 +7,7 @@ import Images.TileMapImage;
 import Swing.Panel;
 
 public class RenderLevel {
-    final int SUB_IMAGE_SIZE = TileMapImage.SUB_IMAGE_SIZE;
+    final int SQUARE_SIZE = TileMapImage.SQUARE_SIZE;
     Panel panel;
     private final int[][] mapData;
     private static final Image[] tileMapImg;
@@ -17,14 +17,14 @@ public class RenderLevel {
     }
     public RenderLevel(Panel panel, int[][] mapData) {
         this.mapData = mapData;
+        this.panel = panel;
     }
-    public void render(Graphics g, Panel observer) {
+    public void render(Graphics g) {
         for (int y = 0; y < mapData.length; y++) {
             for (int x = 0; x < mapData[y].length; x++) {
                 int tileIndex = mapData[y][x];
                 if (tileIndex >= 0 && tileIndex < tileMapImg.length) {
-                    Image tile = tileMapImg[tileIndex];
-                    g.drawImage(tile, x * SUB_IMAGE_SIZE, y * SUB_IMAGE_SIZE, observer);
+                    g.drawImage(tileMapImg[tileIndex], x * SQUARE_SIZE, y * SQUARE_SIZE, panel);
                 }
             }
         }

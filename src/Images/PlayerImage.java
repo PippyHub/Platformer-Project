@@ -20,7 +20,7 @@ public class PlayerImage {
             int index = 0;
             for (int x = 0; x < IMAGE_WIDTH; x += SUB_IMAGE_WIDTH) {
                 images[index] = all.getSubimage(x, 0, SUB_IMAGE_WIDTH, SUB_IMAGE_HEIGHT)
-                        .getScaledInstance(64, 128, BufferedImage.SCALE_SMOOTH);
+                        .getScaledInstance(50, 100, BufferedImage.SCALE_SMOOTH);
                 index++;
             }
 

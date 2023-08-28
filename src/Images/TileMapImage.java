@@ -6,11 +6,12 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 public class TileMapImage {
-    public static final int SUB_IMAGE_SIZE = 100;
+    static final int SUB_IMAGE_SIZE = 100;
     static final int TILE_AMOUNT_HORIZONTAL = 2;
     static final int TILE_AMOUNT_VERTICAL = 1;
     static final int IMAGE_WIDTH = SUB_IMAGE_SIZE * TILE_AMOUNT_HORIZONTAL;
     static final int IMAGE_HEIGHT = SUB_IMAGE_SIZE * TILE_AMOUNT_VERTICAL;
+    public static final int SQUARE_SIZE = 50;
     private final Image[] images;
     public TileMapImage() {
         images = new Image[2];
@@ -22,7 +23,7 @@ public class TileMapImage {
             for (int y = 0; y < IMAGE_HEIGHT; y += SUB_IMAGE_SIZE){
                 for (int x = 0; x < IMAGE_WIDTH; x += SUB_IMAGE_SIZE) {
                     images[index] = all.getSubimage(x, y, SUB_IMAGE_SIZE, SUB_IMAGE_SIZE)
-                            .getScaledInstance(64, 128, BufferedImage.SCALE_SMOOTH);
+                            .getScaledInstance(SQUARE_SIZE, SQUARE_SIZE, BufferedImage.SCALE_SMOOTH);
                     index++;
                 }
             }

@@ -1,5 +1,4 @@
 package Terrain;
-
 public class Level {
     enum LevelSelect {
         ONE (Level1::createLevel),

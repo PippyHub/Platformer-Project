@@ -12,7 +12,6 @@ import Player.Event;
 import Player.Player;
 import Player.RenderPlayer;
 import Terrain.Level;
-import Terrain.Level1;
 import Terrain.RenderLevel;
 
 public class Panel extends JPanel implements ActionListener, KeyListener {
@@ -30,8 +29,8 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         loadGame();
     }
     public void loadGame() {
-        player = new Player(0, 0);
         level = new Level();
+        player = new Player(0, 0, level);
         loadListeners();
         loadTimer();
         loadRender();
@@ -51,7 +50,7 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
     }
     public void paint(Graphics g) {
         renderPlayer.render(g);
-        renderLevel.render(g, this);
+        renderLevel.render(g);
     }
     @Override
     public void actionPerformed(ActionEvent e) {
