@@ -1,55 +1,46 @@
 package Player;
 
 import java.awt.event.KeyEvent;
+import java.util.HashSet;
+import java.util.Set;
 
 import Swing.Panel;
 public class Input {
     Panel panel;
     Player player;
-    boolean leftKeyPressed, rightKeyPressed, upKeyPressed, downKeyPressed;
+    Set<Integer> pressedKeys = new HashSet<>();
     public Input(Panel panel) {
         this.panel = panel;
         this.player = panel.player;
     }
     public void keyPressed(KeyEvent e) {
-        int key = e.getKeyCode();
-        switch (key) {
-            case KeyEvent.VK_LEFT -> leftKeyPressed = true;
-            case KeyEvent.VK_RIGHT -> rightKeyPressed = true;
-            case KeyEvent.VK_UP -> upKeyPressed = true;
-            case KeyEvent.VK_DOWN -> downKeyPressed = true;
+        pressedKeys.add(e.getKeyCode());
+        int speedX = 0;
+        int speedY = 0;
+        for (Integer key : pressedKeys) {
+            switch (key) {
+                case KeyEvent.VK_LEFT -> speedX -= 5;
+                case KeyEvent.VK_RIGHT -> speedX += 5;
+                case KeyEvent.VK_UP -> speedY -= 5;
+                case KeyEvent.VK_DOWN -> speedY += 5;
+            }
         }
-
-        if (leftKeyPressed && rightKeyPressed || upKeyPressed && downKeyPressed) {
-            player.direction = Player.Direction.IDLE;
-        } else if (leftKeyPressed) {
-            player.direction = Player.Direction.LEFT;
-        } else if (rightKeyPressed) {
-            player.direction = Player.Direction.RIGHT;
-        } else if (upKeyPressed) {
-            player.direction = Player.Direction.UP;
-        } else if (downKeyPressed) {
-            player.direction = Player.Direction.DOWN;
-        }
+        player.setSpeedX(speedX);
+        player.setSpeedY(speedY);
     }
     public void keyReleased(KeyEvent e) {
-        int key = e.getKeyCode();
-        switch (key) {
-            case KeyEvent.VK_LEFT -> leftKeyPressed = false;
-            case KeyEvent.VK_RIGHT -> rightKeyPressed = false;
-            case KeyEvent.VK_UP -> upKeyPressed = false;
-            case KeyEvent.VK_DOWN -> downKeyPressed = false;
+        pressedKeys.remove(e.getKeyCode());
+        int speedX = 0;
+        int speedY = 0;
+        for (Integer key : pressedKeys) {
+            switch (key) {
+                case KeyEvent.VK_LEFT -> speedX -= 5;
+                case KeyEvent.VK_RIGHT -> speedX += 5;
+                case KeyEvent.VK_UP -> speedY -= 5;
+                case KeyEvent.VK_DOWN -> speedY += 5;
+            }
         }
-        if (!leftKeyPressed && !rightKeyPressed && !upKeyPressed && !downKeyPressed) {
-            player.direction = Player.Direction.IDLE;
-        } else if (leftKeyPressed) {
-            player.direction = Player.Direction.LEFT;
-        } else if (rightKeyPressed) {
-            player.direction = Player.Direction.RIGHT;
-        } else if (upKeyPressed) {
-            player.direction = Player.Direction.UP;
-        } else {
-            player.direction = Player.Direction.DOWN;
-        }
+        player.setSpeedX(speedX);
+        player.setSpeedY(speedY);
     }
 }

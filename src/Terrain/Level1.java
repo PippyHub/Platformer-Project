@@ -17,9 +17,11 @@ public class Level1 {
         }
         for (int x = 0; x < LEVEL_WIDTH; x++) {
             levelData[LEVEL_HEIGHT - 1][x] = 0;
+            levelData[0][x] = 0;
         }
         for (int y = 0; y < LEVEL_HEIGHT; y++) {
             levelData[y][LEVEL_WIDTH - 1] = 0;
+            levelData[y][0] = 0;
         }
         return levelData;
     }

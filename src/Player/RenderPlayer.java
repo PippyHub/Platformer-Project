@@ -17,6 +17,6 @@ public class RenderPlayer {
         this.player = player;
     }
     public void render(Graphics g) {
-        g.drawImage(playerImg[0], player.x, player.y, panel);
+        g.drawImage(playerImg[0], (int) player.x, (int) player.y, panel);
     }
 }

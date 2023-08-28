@@ -30,7 +30,7 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
     }
     public void loadGame() {
         level = new Level();
-        player = new Player(0, 0, level);
+        player = new Player(PANEL_WIDTH / 2 - Player.PLAYER_WIDTH / 2, PANEL_HEIGHT / 2 - Player.PLAYER_HEIGHT / 2, level);
         loadListeners();
         loadTimer();
         loadRender();
