@@ -7,33 +7,51 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import Images.PlayerImage;
-
 import Player.Input;
 import Player.Event;
 import Player.Player;
+import Player.RenderPlayer;
+import Terrain.Level;
+import Terrain.Level1;
+import Terrain.RenderLevel;
 
 public class Panel extends JPanel implements ActionListener, KeyListener {
-    static final int Panel_WIDTH = 1280;
-    static final int Panel_HEIGHT = 720;
-    private final Input input;
-    private final Event event;
-    public final Player player;
-    private static final Image[] playerImg;
-    static {
-        PlayerImage playerImage = new PlayerImage();
-        playerImg = playerImage.loadImages();
-    }
+    public static final int PANEL_WIDTH = 1200;
+    public static final int PANEL_HEIGHT = 700;
+    final int FRAMES_PER_SECOND = 60;
+    private Input input;
+    private Event event;
+    public Player player;
+    public Level level;
+    public RenderPlayer renderPlayer;
+    public RenderLevel renderLevel;
     public Panel() {
+        addKeyListener(this);
+        loadGame();
+    }
+    public void loadGame() {
         player = new Player(0, 0);
+        level = new Level();
+        loadListeners();
+        loadTimer();
+        loadRender();
+    }
+    public void loadListeners() {
         input = new Input(this);
         event = new Event(this);
-        addKeyListener(this);
-        Timer timer = new Timer(16, this);
+    }
+    public void loadTimer() {
+        int frames = 1000 / FRAMES_PER_SECOND;
+        Timer timer = new Timer(frames, this);
         timer.start();
     }
+    public void loadRender() {
+        renderPlayer = new RenderPlayer(this, player);
+        renderLevel = new RenderLevel(this, level.currentLevel);
+    }
     public void paint(Graphics g) {
-        g.drawImage(playerImg[0], player.x, player.y, this);
+        renderPlayer.render(g);
+        renderLevel.render(g, this);
     }
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -47,6 +65,6 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
     }
     @Override
     public void keyReleased(KeyEvent e) {
-        input.keyReleased();
+        input.keyReleased(e);
     }
 }

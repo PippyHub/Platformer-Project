@@ -3,7 +3,6 @@ public class Player {
     enum Direction {
         LEFT, RIGHT, IDLE
     }
-
     Direction direction = Direction.IDLE;
     public int x;
     public int y;
@@ -23,7 +22,7 @@ public class Player {
             case LEFT -> targetX = x - speed;
             case RIGHT -> targetX = x + speed;
         }
-        smoothX = lerp(smoothX, targetX, lerpFactor);
+        smoothX = lerp(x, targetX, lerpFactor);
         x = (int) (smoothX + 0.5f);
     }
     private float lerp(float start, float end, float t) {
