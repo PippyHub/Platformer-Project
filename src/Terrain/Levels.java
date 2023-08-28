@@ -1,5 +1,5 @@
 package Terrain;
-public class Level {
+public class Levels {
     enum LevelSelect {
         ONE (Level1::createLevel),
         TWO (Level1::createLevel);
@@ -16,7 +16,7 @@ public class Level {
     }
     LevelSelect levelSelect;
     public int[][] currentLevel;
-    public Level() {
+    public Levels() {
         levelSelect = LevelSelect.ONE;
         currentLevel = levelSelect.createLevel();
     }

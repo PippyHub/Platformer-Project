@@ -3,7 +3,6 @@ package Player;
 import java.awt.event.KeyEvent;
 import java.util.HashSet;
 import java.util.Set;
-
 import Swing.Panel;
 public class Input {
     Panel panel;
