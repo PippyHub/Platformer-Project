@@ -9,6 +9,7 @@ public class Event {
         this.panel = panel;
     }
     public void actionPerformed() {
+        player.gravity();
         player.move();
         panel.repaint();
     }

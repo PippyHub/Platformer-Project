@@ -4,11 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1be4e55a-2a87-40de-92e7-f0b6f5ae703e" name="Changes" comment="Collisions unfinished">
+    <list default="true" id="1be4e55a-2a87-40de-92e7-f0b6f5ae703e" name="Changes" comment="Collisions almost working">
+      <change afterPath="$PROJECT_DIR$/src/Player/PlayerCollision.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Terrain/TerrainCollision.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Terrain/Tile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player/Collision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Collision.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Images/TileMapImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Images/TileMapImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player/Collision.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Input.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player/RenderPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/RenderPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Swing/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/Frame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Swing/Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/Panel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Terrain/Level1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Terrain/Level1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Terrain/Level2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Terrain/Level2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Terrain/Levels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Terrain/Levels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Terrain/RenderLevels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Terrain/RenderLevels.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,13 +55,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Images" />
@@ -137,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693282536133</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Collisions almost working">
+      <created>1693285315148</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1693285315148</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -150,6 +169,7 @@
     <MESSAGE value="Boundary collisions" />
     <MESSAGE value="Reformatting variables" />
     <MESSAGE value="Collisions unfinished" />
-    <option name="LAST_COMMIT_MESSAGE" value="Collisions unfinished" />
+    <MESSAGE value="Collisions almost working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Collisions almost working" />
   </component>
 </project>

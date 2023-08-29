@@ -1,4 +1,7 @@
 package Terrain;
+
+import java.util.LinkedList;
+
 public class Levels {
     enum LevelSelect {
         ONE (Level1::createLevel),
@@ -15,14 +18,18 @@ public class Levels {
         int[][] createLevel();
     }
     public static final int TILE_SIZE = 50;
+    public static LinkedList<Tile> tc = new LinkedList<>();
     LevelSelect levelSelect;
+    TerrainCollision terrainCollision;
     public int[][] currentLevel;
     public Levels() {
         levelSelect = LevelSelect.ONE;
         currentLevel = levelSelect.createLevel();
+        terrainCollision = new TerrainCollision(currentLevel, tc);
     }
     public void setLevelSelect(LevelSelect newLevel) {
         levelSelect = newLevel;
         currentLevel = levelSelect.createLevel();
+        terrainCollision = new TerrainCollision(currentLevel, tc);
     }
 }

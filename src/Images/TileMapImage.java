@@ -8,12 +8,12 @@ import javax.imageio.ImageIO;
 
 import static Terrain.Levels.TILE_SIZE;
 public class TileMapImage {
-    static final int SUB_IMAGE_SIZE = 100;
-    static final int TILE_AMOUNT_HORIZONTAL = 2;
-    static final int TILE_AMOUNT_VERTICAL = 1;
-    static final int IMAGE_AMOUNT = TILE_AMOUNT_HORIZONTAL * TILE_AMOUNT_VERTICAL;
-    static final int IMAGE_WIDTH = SUB_IMAGE_SIZE * TILE_AMOUNT_HORIZONTAL;
-    static final int IMAGE_HEIGHT = SUB_IMAGE_SIZE * TILE_AMOUNT_VERTICAL;
+    final int SUB_IMAGE_SIZE = 100;
+    final int TILE_AMOUNT_HORIZONTAL = 2;
+    final int TILE_AMOUNT_VERTICAL = 1;
+    final int IMAGE_AMOUNT = TILE_AMOUNT_HORIZONTAL * TILE_AMOUNT_VERTICAL;
+    final int IMAGE_WIDTH = SUB_IMAGE_SIZE * TILE_AMOUNT_HORIZONTAL;
+    final int IMAGE_HEIGHT = SUB_IMAGE_SIZE * TILE_AMOUNT_VERTICAL;
     private final Image[] images;
     public TileMapImage() {
         images = new Image[IMAGE_AMOUNT];
