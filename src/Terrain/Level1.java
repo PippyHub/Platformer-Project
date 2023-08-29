@@ -3,6 +3,7 @@ package Terrain;
 import static Swing.Panel.PANEL_WIDTH;
 import static Swing.Panel.PANEL_HEIGHT;
 import static Terrain.Levels.TILE_SIZE;
+
 public class Level1 {
     private static final int LEVEL_WIDTH = PANEL_WIDTH / TILE_SIZE;
     private static final int LEVEL_HEIGHT = PANEL_HEIGHT / TILE_SIZE;
@@ -21,7 +22,7 @@ public class Level1 {
             levelData[y][LEVEL_WIDTH - 1] = 0;
             levelData[y][0] = 0;
         }
-        levelData[5][5]=0;
+        levelData[5][5] = 0;
         return levelData;
     }
 }

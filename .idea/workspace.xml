@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1be4e55a-2a87-40de-92e7-f0b6f5ae703e" name="Changes" comment="Reformatting variables">
+    <list default="true" id="1be4e55a-2a87-40de-92e7-f0b6f5ae703e" name="Changes" comment="Collisions unfinished">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player/Collision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Collision.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Swing/Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/Panel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Terrain/Level1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Terrain/Level1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -131,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693278481875</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Collisions unfinished">
+      <created>1693282536133</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1693282536133</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -143,6 +149,7 @@
     <MESSAGE value="Main engine finished" />
     <MESSAGE value="Boundary collisions" />
     <MESSAGE value="Reformatting variables" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reformatting variables" />
+    <MESSAGE value="Collisions unfinished" />
+    <option name="LAST_COMMIT_MESSAGE" value="Collisions unfinished" />
   </component>
 </project>

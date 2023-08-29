@@ -10,39 +10,25 @@ public class Collision {
         this.player = player;
     }
     public  boolean xCollision(float newX, int[][] level) {
-        int playerLeftTile = (int) (newX / TILE_SIZE);
-        int playerRightTile = (int) ((newX + PLAYER_WIDTH) / TILE_SIZE);
-        if (playerLeftTile < 0 || playerRightTile >= level[0].length) {
+        if (newX < 0 || newX + PLAYER_WIDTH > level[0].length * TILE_SIZE) {
             return true;
         }
-        System.out.println(playerLeftTile);
-        /*int playerTopTile = (int) (player.y / TILE_SIZE);
-        int playerBottomTile = (int) ((player.y + PLAYER_HEIGHT) / TILE_SIZE);
-
-        for (int y = playerTopTile; y <= playerBottomTile; y++) {
-            if (level[y][playerLeftTile] == 0 || level[y][playerRightTile] == 0) {
+        for (float y = player.y; y <= player.y + PLAYER_HEIGHT; y++) {
+            if (level[(int) y / TILE_SIZE][(int) newX / TILE_SIZE] >= 0 || level[(int) y / TILE_SIZE][(int) (newX + PLAYER_WIDTH) / TILE_SIZE] >= 0) {
                 return true;
             }
-        }*/
+        }
         return false;
     }
     public boolean yCollision(float newY, int[][] level) {
-        int playerTopTile = (int) (newY / TILE_SIZE);
-        int playerBottomTile = (int) ((newY + PLAYER_HEIGHT) / TILE_SIZE);
-
-        if (playerTopTile < 0 || playerBottomTile >= level.length) {
+        if (newY < 0 || newY + PLAYER_HEIGHT > level.length * TILE_SIZE) {
             return true;
         }
-
-        /*int playerLeftTile = (int) (player.x / TILE_SIZE);
-        int playerRightTile = (int) ((player.x + PLAYER_WIDTH) / TILE_SIZE);
-
-        for (int x = playerLeftTile; x <= playerRightTile; x++) {
-            if (level[playerTopTile][x] == 0 || level[playerBottomTile][x] == 0) {
+        for (float x = player.x; x <= player.x + PLAYER_WIDTH; x++) {
+            if (level[(int) newY / TILE_SIZE][(int) x / TILE_SIZE] >= 0 || level[(int) (newY + PLAYER_HEIGHT) / TILE_SIZE][(int) x / TILE_SIZE] >= 0) {
                 return true;
             }
-        }*/
-
+        }
         return false;
     }
 }

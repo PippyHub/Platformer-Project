@@ -2,7 +2,7 @@ package Player;
 
 import Terrain.Levels;
 public class Player {
-    public static final int PLAYER_WIDTH = 25;
+    public static final int PLAYER_WIDTH = 20;
     public static final int PLAYER_HEIGHT = 50;
     Collision collision;
     Levels levels;
