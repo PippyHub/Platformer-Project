@@ -16,7 +16,10 @@ public class Level1 {
             levelData[0][x] = 0;
             levelData[PANEL_HEIGHT - TILE_SIZE][x] = 0;
         }
-        levelData[6 * TILE_SIZE][9 * TILE_SIZE] = 0;
+        levelData[20 * TILE_SIZE][18 * TILE_SIZE] = 0;
+        levelData[21 * TILE_SIZE][18 * TILE_SIZE] = 0;
+        levelData[17 * TILE_SIZE][21 * TILE_SIZE] = 0;
+        levelData[15 * TILE_SIZE][25 * TILE_SIZE] = 0;
         return levelData;
     }
 }

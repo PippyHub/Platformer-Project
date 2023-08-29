@@ -5,11 +5,14 @@ import java.util.HashSet;
 import java.util.Set;
 
 import Swing.Panel;
+
 public class Input {
     final int PLAYER_SPEED = 5;
     Player player;
     Panel panel;
     Set<Integer> pressedKeys = new HashSet<>();
+    boolean upKeyWasPressed = false;
+
     public Input(Panel panel) {
         this.player = panel.player;
         this.panel = panel;
@@ -19,9 +22,14 @@ public class Input {
         int speedX = 0;
         for (Integer key : pressedKeys) {
             switch (key) {
-                case KeyEvent.VK_LEFT -> speedX -= PLAYER_SPEED;
-                case KeyEvent.VK_RIGHT -> speedX += PLAYER_SPEED;
-                case KeyEvent.VK_UP -> { player.jump(); }
+                case KeyEvent.VK_A, KeyEvent.VK_LEFT -> speedX -= PLAYER_SPEED;
+                case KeyEvent.VK_D, KeyEvent.VK_RIGHT-> speedX += PLAYER_SPEED;
+                case KeyEvent.VK_SPACE, KeyEvent.VK_UP -> {
+                    if (!upKeyWasPressed) {
+                        player.jump();
+                        upKeyWasPressed = true;
+                    }
+                }
             }
         }
         player.setSpeedX(speedX);
@@ -31,10 +39,13 @@ public class Input {
         int speedX = 0;
         for (Integer key : pressedKeys) {
             switch (key) {
-                case KeyEvent.VK_LEFT -> speedX -= PLAYER_SPEED;
-                case KeyEvent.VK_RIGHT -> speedX += PLAYER_SPEED;
+                case KeyEvent.VK_A, KeyEvent.VK_LEFT -> speedX -= PLAYER_SPEED;
+                case KeyEvent.VK_D, KeyEvent.VK_RIGHT -> speedX += PLAYER_SPEED;
             }
         }
         player.setSpeedX(speedX);
+        if (!pressedKeys.contains(KeyEvent.VK_SPACE) && !pressedKeys.contains(KeyEvent.VK_UP)) {
+            upKeyWasPressed = false;
+        }
     }
 }

@@ -17,7 +17,7 @@ public class Levels {
     interface LevelCreator {
         int[][] createLevel();
     }
-    public static final int TILE_SIZE = 50;
+    public static final int TILE_SIZE = 30;
     public static LinkedList<Tile> tc = new LinkedList<>();
     LevelSelect levelSelect;
     TerrainCollision terrainCollision;

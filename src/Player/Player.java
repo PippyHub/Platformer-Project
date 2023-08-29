@@ -2,9 +2,9 @@ package Player;
 
 import Terrain.Levels;
 public class Player {
-    public static final int PLAYER_WIDTH = 50;
-    public static final int PLAYER_HEIGHT = 100;
-    final int TERMINAL_VELOCITY = 300;
+    public static final int PLAYER_WIDTH = 40;
+    public static final int PLAYER_HEIGHT = 60;
+    final int TERMINAL_VELOCITY = 30;
     final float GRAVITY = 0.5f;
     PlayerCollision collision;
     Levels levels;
@@ -31,6 +31,14 @@ public class Player {
         if (!collision.yCollision(y + speedY)) {
             y += speedY;
         } else {
+            float distanceToCollision = 0;
+            for (float i = speedY; i > 0; i--) {
+                if (!collision.yCollision(y + i)) {
+                    distanceToCollision = i;
+                    break;
+                }
+            }
+            y += distanceToCollision;
             speedY = 0;
             isJumping = false;
         }
