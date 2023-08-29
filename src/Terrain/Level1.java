@@ -21,6 +21,7 @@ public class Level1 {
             levelData[y][LEVEL_WIDTH - 1] = 0;
             levelData[y][0] = 0;
         }
+        levelData[5][5]=0;
         return levelData;
     }
 }

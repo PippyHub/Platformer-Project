@@ -28,8 +28,8 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         loadGame();
     }
     public void loadGame() {
-        player = new Player(PANEL_WIDTH/2-Player.PLAYER_WIDTH/2,PANEL_HEIGHT/2-Player.PLAYER_HEIGHT/2);
         levels = new Levels();
+        player = new Player(PANEL_WIDTH/2-Player.PLAYER_WIDTH/2,PANEL_HEIGHT/2-Player.PLAYER_HEIGHT/2, levels);
         loadListeners();
         loadTimer();
         loadRender();
@@ -48,8 +48,8 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         renderLevels = new RenderLevels(this, levels.currentLevel);
     }
     public void paint(Graphics g) {
-        renderPlayer.render(g);
         renderLevels.render(g);
+        renderPlayer.render(g);
     }
     @Override
     public void actionPerformed(ActionEvent e) {
