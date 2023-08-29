@@ -3,14 +3,15 @@ package Player;
 import java.awt.event.KeyEvent;
 import java.util.HashSet;
 import java.util.Set;
+
 import Swing.Panel;
 public class Input {
-    Panel panel;
     Player player;
+    Panel panel;
     Set<Integer> pressedKeys = new HashSet<>();
     public Input(Panel panel) {
-        this.panel = panel;
         this.player = panel.player;
+        this.panel = panel;
     }
     public void keyPressed(KeyEvent e) {
         pressedKeys.add(e.getKeyCode());

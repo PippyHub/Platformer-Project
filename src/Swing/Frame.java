@@ -2,9 +2,10 @@ package Swing;
 
 import javax.swing.*;
 import java.awt.*;
+
+import static Swing.Panel.PANEL_WIDTH;
+import static Swing.Panel.PANEL_HEIGHT;
 public class Frame extends JFrame {
-    static final int PANEL_WIDTH = Panel.PANEL_WIDTH;
-    static final int PANEL_HEIGHT = Panel.PANEL_HEIGHT;
     public static Panel panel = new Panel();
     public Frame() {
         setTitle("Platformer");

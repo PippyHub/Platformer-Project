@@ -12,32 +12,31 @@ import Player.Event;
 import Player.Player;
 import Player.RenderPlayer;
 import Terrain.Levels;
-import Terrain.RenderLevel;
-
+import Terrain.RenderLevels;
 public class Panel extends JPanel implements ActionListener, KeyListener {
     public static final int PANEL_WIDTH = 1200;
     public static final int PANEL_HEIGHT = 700;
     final int FRAMES_PER_SECOND = 60;
-    private Input input;
     private Event event;
+    private Input input;
     public Player player;
-    public Levels level;
     public RenderPlayer renderPlayer;
-    public RenderLevel renderLevel;
+    public Levels levels;
+    public RenderLevels renderLevels;
     public Panel() {
         addKeyListener(this);
         loadGame();
     }
     public void loadGame() {
-        level = new Levels();
         player = new Player(PANEL_WIDTH/2-Player.PLAYER_WIDTH/2,PANEL_HEIGHT/2-Player.PLAYER_HEIGHT/2);
+        levels = new Levels();
         loadListeners();
         loadTimer();
         loadRender();
     }
     public void loadListeners() {
-        input = new Input(this);
         event = new Event(this);
+        input = new Input(this);
     }
     public void loadTimer() {
         int frames = 1000 / FRAMES_PER_SECOND;
@@ -46,11 +45,11 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
     }
     public void loadRender() {
         renderPlayer = new RenderPlayer(this, player);
-        renderLevel = new RenderLevel(this, level.currentLevel);
+        renderLevels = new RenderLevels(this, levels.currentLevel);
     }
     public void paint(Graphics g) {
-        renderLevel.render(g);
         renderPlayer.render(g);
+        renderLevels.render(g);
     }
     @Override
     public void actionPerformed(ActionEvent e) {

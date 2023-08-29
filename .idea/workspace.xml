@@ -4,12 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1be4e55a-2a87-40de-92e7-f0b6f5ae703e" name="Changes" comment="Main engine finished">
+    <list default="true" id="1be4e55a-2a87-40de-92e7-f0b6f5ae703e" name="Changes" comment="Boundary collisions">
+      <change afterPath="$PROJECT_DIR$/src/Player/Collision.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Terrain/Level2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Images/PlayerImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Images/PlayerImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Images/TileMapImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Images/TileMapImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Event.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Input.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player/RenderPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/RenderPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Swing/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/Frame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Swing/Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/Panel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Terrain/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Terrain/Levels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Terrain/Level1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Terrain/Level1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Terrain/Levels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Terrain/Levels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Terrain/RenderLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Terrain/RenderLevels.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693223481180</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Boundary collisions">
+      <created>1693226337625</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1693226337625</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -127,6 +143,7 @@
     <MESSAGE value="50% collisions" />
     <MESSAGE value="Original movement" />
     <MESSAGE value="Main engine finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="Main engine finished" />
+    <MESSAGE value="Boundary collisions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Boundary collisions" />
   </component>
 </project>

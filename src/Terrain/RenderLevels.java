@@ -5,9 +5,8 @@ import java.awt.Image;
 
 import Images.TileMapImage;
 import Swing.Panel;
-
-public class RenderLevel {
-    final int SQUARE_SIZE = TileMapImage.SQUARE_SIZE;
+import static Terrain.Levels.TILE_SIZE;
+public class RenderLevels {
     Panel panel;
     private final int[][] mapData;
     private static final Image[] tileMapImg;
@@ -15,7 +14,7 @@ public class RenderLevel {
         TileMapImage tileMapImage = new TileMapImage();
         tileMapImg = tileMapImage.loadImages();
     }
-    public RenderLevel(Panel panel, int[][] mapData) {
+    public RenderLevels(Panel panel, int[][] mapData) {
         this.mapData = mapData;
         this.panel = panel;
     }
@@ -24,7 +23,7 @@ public class RenderLevel {
             for (int x = 0; x < mapData[y].length; x++) {
                 int tileIndex = mapData[y][x];
                 if (tileIndex >= 0 && tileIndex < tileMapImg.length) {
-                    g.drawImage(tileMapImg[tileIndex], x * SQUARE_SIZE, y * SQUARE_SIZE, panel);
+                    g.drawImage(tileMapImg[tileIndex], x * TILE_SIZE, y * TILE_SIZE, panel);
                 }
             }
         }
