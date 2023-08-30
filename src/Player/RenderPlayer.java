@@ -3,24 +3,24 @@ package Player;
 import java.awt.*;
 
 import Images.PlayerImage;
-import Swing.Panel;
+import Swing.GamePanel;
 
 import static Player.Player.PLAYER_WIDTH;
 import static Player.Player.PLAYER_HEIGHT;
 public class RenderPlayer {
     Player player;
-    Panel panel;
+    GamePanel gamePanel;
     private static final Image[] playerImg;
     static {
         PlayerImage playerImage = new PlayerImage();
         playerImg = playerImage.loadImages();
     }
-    public RenderPlayer(Panel panel, Player player) {
+    public RenderPlayer(GamePanel gamePanel, Player player) {
         this.player = player;
-        this.panel = panel;
+        this.gamePanel = gamePanel;
     }
     public void render(Graphics g) {
-        g.drawImage(playerImg[0], (int) player.x, (int) player.y, panel);
+        g.drawImage(playerImg[0], (int) player.x, (int) player.y, gamePanel);
         hitBox(g);
     }
     public void hitBox(Graphics g) {

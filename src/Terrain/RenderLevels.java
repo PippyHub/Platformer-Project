@@ -2,9 +2,9 @@ package Terrain;
 
 import java.awt.*;
 import Images.TileMapImage;
-import Swing.Panel;
+import Swing.GamePanel;
 public class RenderLevels {
-    Panel panel;
+    GamePanel gamePanel;
     private final int[][] mapData;
     private static final Image[] tileMapImg;
     static {
@@ -12,9 +12,9 @@ public class RenderLevels {
         tileMapImg = tileMapImage.loadImages();
     }
 
-    public RenderLevels(Panel panel, int[][] mapData) {
+    public RenderLevels(GamePanel gamePanel, int[][] mapData) {
         this.mapData = mapData;
-        this.panel = panel;
+        this.gamePanel = gamePanel;
     }
 
     public void render(Graphics g) {
@@ -22,7 +22,7 @@ public class RenderLevels {
             for (int x = 0; x < mapData[y].length; x++) {
                 int tileIndex = mapData[y][x];
                 if (tileIndex >= 0 && tileIndex < tileMapImg.length) {
-                    g.drawImage(tileMapImg[tileIndex], x, y, panel);
+                    g.drawImage(tileMapImg[tileIndex], x, y, gamePanel);
                 }
             }
         }

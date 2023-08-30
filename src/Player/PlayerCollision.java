@@ -4,8 +4,8 @@ import Terrain.Tile;
 
 import static Player.Player.PLAYER_WIDTH;
 import static Player.Player.PLAYER_HEIGHT;
-import static Swing.Panel.PANEL_WIDTH;
-import static Swing.Panel.PANEL_HEIGHT;
+import static Swing.GamePanel.PANEL_WIDTH;
+import static Swing.GamePanel.PANEL_HEIGHT;
 import static Terrain.Levels.TILE_SIZE;
 import static Terrain.Levels.tc;
 public class PlayerCollision {

@@ -4,18 +4,18 @@ import java.awt.event.KeyEvent;
 import java.util.HashSet;
 import java.util.Set;
 
-import Swing.Panel;
+import Swing.GamePanel;
 
 public class Input {
     final int PLAYER_SPEED = 5;
     Player player;
-    Panel panel;
+    GamePanel gamePanel;
     Set<Integer> pressedKeys = new HashSet<>();
     boolean upKeyWasPressed = false;
 
-    public Input(Panel panel) {
-        this.player = panel.player;
-        this.panel = panel;
+    public Input(GamePanel gamePanel) {
+        this.player = gamePanel.player;
+        this.gamePanel = gamePanel;
     }
     public void keyPressed(KeyEvent e) {
         pressedKeys.add(e.getKeyCode());

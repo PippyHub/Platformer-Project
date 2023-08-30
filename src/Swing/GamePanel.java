@@ -13,7 +13,7 @@ import Player.Player;
 import Player.RenderPlayer;
 import Terrain.Levels;
 import Terrain.RenderLevels;
-public class Panel extends JPanel implements ActionListener, KeyListener {
+public class GamePanel extends JPanel implements ActionListener, KeyListener {
     public static final int PANEL_WIDTH = 1200;
     public static final int PANEL_HEIGHT = 690;
     final int FRAMES_PER_SECOND = 60;
@@ -23,7 +23,7 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
     public RenderPlayer renderPlayer;
     public Levels levels;
     public RenderLevels renderLevels;
-    public Panel() {
+    public GamePanel() {
         addKeyListener(this);
         loadGame();
     }

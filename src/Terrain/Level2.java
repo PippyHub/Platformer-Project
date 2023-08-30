@@ -1,7 +1,7 @@
 package Terrain;
 
-import static Swing.Panel.PANEL_WIDTH;
-import static Swing.Panel.PANEL_HEIGHT;
+import static Swing.GamePanel.PANEL_WIDTH;
+import static Swing.GamePanel.PANEL_HEIGHT;
 import static Terrain.Levels.TILE_SIZE;
 public class Level2 {
     public static int[][] createLevel() {

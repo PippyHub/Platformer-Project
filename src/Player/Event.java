@@ -1,16 +1,16 @@
 package Player;
 
-import Swing.Panel;
+import Swing.GamePanel;
 public class Event {
     Player player;
-    Panel panel;
-    public Event(Panel panel) {
-        this.player = panel.player;
-        this.panel = panel;
+    GamePanel gamePanel;
+    public Event(GamePanel gamePanel) {
+        this.player = gamePanel.player;
+        this.gamePanel = gamePanel;
     }
     public void actionPerformed() {
         player.gravity();
         player.move();
-        panel.repaint();
+        gamePanel.repaint();
     }
 }

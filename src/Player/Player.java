@@ -32,10 +32,19 @@ public class Player {
             y += speedY;
         } else {
             float distanceToCollision = 0;
-            for (float i = speedY; i > 0; i--) {
-                if (!collision.yCollision(y + i)) {
-                    distanceToCollision = i;
-                    break;
+            if (speedY > 0) {
+                for (float i = speedY; i > 0; i--) {
+                    if (!collision.yCollision(y + i)) {
+                        distanceToCollision = i;
+                        break;
+                    }
+                }
+            } else {
+                for (float i = speedY; i < 0; i++) {
+                    if (!collision.yCollision(y + i)) {
+                        distanceToCollision = i;
+                        break;
+                    }
                 }
             }
             y += distanceToCollision;
