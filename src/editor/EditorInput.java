@@ -1,23 +1,23 @@
-package Editor;
+package editor;
 
 import java.awt.event.MouseEvent;
 import javax.swing.*;
 
-import Levels.Levels;
-import Levels.LevelsTiles;
-import Swing.EditorPanel;
-import static Editor.Picker.PickerInput.pickedTile;
-import static Levels.Levels.*;
-import static Swing.EditorPanel.EDITOR_PANEL_HEIGHT;
-import static Swing.EditorPanel.EDITOR_PANEL_WIDTH;
+import levels.Levels;
+import levels.LevelsTiles;
+import swing.EditorPanel;
+import static editor.picker.PickerInput.pickedTile;
+import static levels.Levels.*;
+import static swing.EditorPanel.EDITOR_PANEL_HEIGHT;
+import static swing.EditorPanel.EDITOR_PANEL_WIDTH;
 
 public class EditorInput {
     public enum BrushType {
         DELETE_BRUSH, PAINT_BRUSH
     }
     static BrushType brushType = BrushType.PAINT_BRUSH;
-    Levels level;
-    EditorPanel editorPanel;
+    final Levels level;
+    final EditorPanel editorPanel;
     public EditorInput(EditorPanel editorPanel) {
         this.level = editorPanel.level;
         this.editorPanel = editorPanel;

@@ -1,4 +1,4 @@
-package Levels.csv;
+package levels.csv;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

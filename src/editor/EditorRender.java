@@ -1,20 +1,20 @@
-package Levels;
+package editor;
 
 import java.awt.*;
 
-import Images.TileMapImage;
-import Swing.GamePanel;
+import images.TileMapImage;
+import swing.EditorPanel;
 
-public class LevelsRender {
-    GamePanel gamePanel;
+public class EditorRender {
+    EditorPanel editorPanel;
     private final int[][] mapData;
     private static final Image[] tileMapImg;
     static {
         TileMapImage tileMapImage = new TileMapImage();
         tileMapImg = tileMapImage.loadImages();
     }
-    public LevelsRender(GamePanel gamePanel, int[][] mapData) {
-        this.gamePanel = gamePanel;
+    public EditorRender(EditorPanel editorPanel, int[][] mapData) {
+        this.editorPanel = editorPanel;
         this.mapData = mapData;
     }
     public void render(Graphics g) {
@@ -23,8 +23,9 @@ public class LevelsRender {
             for (int x = 0; x < mapData[y].length; x++) {
                 int tileIndex = mapData[y][x];
                 if (tileIndex >= 0 && tileIndex < tileMapImg.length) {
-                    g.drawImage(tileMapImg[tileIndex], x, y, gamePanel);
+                    g.drawImage(tileMapImg[tileIndex], x, y, editorPanel);
                 }
+
             }
         }
     }

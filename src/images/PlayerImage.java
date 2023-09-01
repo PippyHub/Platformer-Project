@@ -1,4 +1,4 @@
-package Images;
+package images;
 
 import java.awt.Image;
 import java.awt.image.BufferedImage;
@@ -6,8 +6,8 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
-import static Player.Player.PLAYER_WIDTH;
-import static Player.Player.PLAYER_HEIGHT;
+import static player.Player.PLAYER_WIDTH;
+import static player.Player.PLAYER_HEIGHT;
 
 public class PlayerImage {
     final int IMAGE_WIDTH = 100;

@@ -1,10 +1,10 @@
-package Player;
+package player;
 
-import Swing.GamePanel;
+import swing.GamePanel;
 
 public class PlayerEvent {
-    Player player;
-    GamePanel gamePanel;
+    final Player player;
+    final GamePanel gamePanel;
     public PlayerEvent(GamePanel gamePanel) {
         this.player = gamePanel.player;
         this.gamePanel = gamePanel;

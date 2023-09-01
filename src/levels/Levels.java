@@ -1,8 +1,8 @@
-package Levels;
+package levels;
 
 import java.util.LinkedList;
 
-import static Levels.csv.LevelsReader.readCSV;
+import static levels.csv.LevelsReader.readCSV;
 
 public class Levels {
     public enum LevelSelect {
@@ -19,15 +19,15 @@ public class Levels {
     public static final int TILE_WIDTH = 32;
     public static final int TILE_HEIGHT = 32;
     LevelSelect levelSelect;
-    LevelsCollision levelsCollision;
-    public static LinkedList<LevelsTiles> tc = new LinkedList<>();
+    public LevelsCollision levelsCollision;
+    public static final LinkedList<LevelsTiles> tc = new LinkedList<>();
     public int[][] currentLevel;
     public Levels() {
         this.levelSelect = LevelSelect.ONE;
         this.currentLevel = this.levelSelect.createLevel();
         this.levelsCollision = new LevelsCollision(currentLevel, tc);
     }
-    public void setLevelSelect(LevelSelect levelSelect) {
+    void setLevelSelect(LevelSelect levelSelect) {
         this.levelSelect = levelSelect;
         this.currentLevel = this.levelSelect.createLevel();
         this.levelsCollision = new LevelsCollision(currentLevel, tc);

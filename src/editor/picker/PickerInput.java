@@ -1,17 +1,17 @@
-package Editor.Picker;
+package editor.picker;
 
-import Swing.PickerPanel;
+import swing.PickerPanel;
 
 import javax.swing.*;
 import java.awt.event.MouseEvent;
 
-import static Images.TileMapImage.*;
-import static Swing.PickerPanel.*;
+import static images.TileMapImage.*;
+import static swing.PickerPanel.*;
 
 public class PickerInput {
-    PickerPanel pickerPanel;
+    final PickerPanel pickerPanel;
     public static int pickedTile = 0;
-    public int[][] tilePicker;
+    public final int[][] tilePicker;
     public PickerInput(PickerPanel pickerPanel) {
         this.pickerPanel = pickerPanel;
         this.tilePicker = new int[(int) PICKER_SUB_IMAGE_WIDTH][(int) PICKER_SUB_IMAGE_HEIGHT];

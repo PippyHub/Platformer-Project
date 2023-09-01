@@ -1,12 +1,12 @@
-package Player;
+package player;
 
 import java.awt.*;
 
-import Images.PlayerImage;
-import Swing.GamePanel;
+import images.PlayerImage;
+import swing.GamePanel;
 
-import static Player.Player.PLAYER_WIDTH;
-import static Player.Player.PLAYER_HEIGHT;
+import static player.Player.PLAYER_WIDTH;
+import static player.Player.PLAYER_HEIGHT;
 public class PlayerRender {
     Player player;
     GamePanel gamePanel;

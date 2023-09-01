@@ -1,16 +1,16 @@
-package Player;
+package player;
 
 import java.awt.event.KeyEvent;
 import java.util.HashSet;
 import java.util.Set;
 
-import Swing.GamePanel;
+import swing.GamePanel;
 
 public class PlayerInput {
     final int PLAYER_SPEED = 5;
-    Player player;
-    GamePanel gamePanel;
-    Set<Integer> pressedKeys = new HashSet<>();
+    final Player player;
+    final GamePanel gamePanel;
+    final Set<Integer> pressedKeys = new HashSet<>();
     boolean upKeyWasPressed = false;
     public PlayerInput(GamePanel gamePanel) {
         this.player = gamePanel.player;

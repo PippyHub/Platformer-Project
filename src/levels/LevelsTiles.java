@@ -1,11 +1,11 @@
-package Levels;
+package levels;
 
 import java.util.LinkedList;
 
 public class LevelsTiles {
-    LinkedList<LevelsTiles> tc;
-    public int tX;
-    public int tY;
+    final LinkedList<LevelsTiles> tc;
+    public final int tX;
+    public final int tY;
     public LevelsTiles(int tX, int tY, LinkedList<LevelsTiles> tc) {
         this.tX = tX;
         this.tY = tY;

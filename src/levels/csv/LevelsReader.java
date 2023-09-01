@@ -1,11 +1,11 @@
-package Levels.csv;
+package levels.csv;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-import static Swing.GamePanel.GAME_PANEL_WIDTH;
-import static Swing.GamePanel.GAME_PANEL_HEIGHT;
+import static swing.GamePanel.GAME_PANEL_WIDTH;
+import static swing.GamePanel.GAME_PANEL_HEIGHT;
 
 public class LevelsReader {
     public static int[][] readCSV(String filePath) {

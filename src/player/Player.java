@@ -1,14 +1,14 @@
-package Player;
+package player;
 
-import Levels.Levels;
+import levels.Levels;
 
 public class Player {
     public static final int PLAYER_WIDTH = 40;
     public static final int PLAYER_HEIGHT = 60;
     final int TERMINAL_VELOCITY = 30;
     final float GRAVITY = 0.5f;
-    PlayerCollision playerCollision;
-    Levels level;
+    final PlayerCollision playerCollision;
+    final Levels level;
     private boolean isJumping = false;
     float x, y;
     private float speedX, speedY;
@@ -22,20 +22,20 @@ public class Player {
     }
     public void move() {
         float newX = x + speedX;
-        if (!playerCollision.xCollision(newX)) {
+        if (playerCollision.xCollision(newX)) {
             x = newX;
         } else {
             float distanceToCollision = 0;
             if (speedX > 0) {
                 for (float i = speedX; i > 0; i--) {
-                    if (!playerCollision.xCollision(x + i)) {
+                    if (playerCollision.xCollision(x + i)) {
                         distanceToCollision = i;
                         break;
                     }
                 }
             } else {
                 for (float i = speedX; i < 0; i++) {
-                    if (!playerCollision.xCollision(x + i)) {
+                    if (playerCollision.xCollision(x + i)) {
                         distanceToCollision = i;
                         break;
                     }

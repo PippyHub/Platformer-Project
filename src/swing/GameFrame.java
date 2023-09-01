@@ -1,12 +1,12 @@
-package Swing;
+package swing;
 
 import javax.swing.*;
 import java.awt.*;
 
-import static Swing.GamePanel.GAME_PANEL_WIDTH;
-import static Swing.GamePanel.GAME_PANEL_HEIGHT;
+import static swing.GamePanel.GAME_PANEL_WIDTH;
+import static swing.GamePanel.GAME_PANEL_HEIGHT;
 public class GameFrame extends JFrame {
-    public static GamePanel gamePanel = new GamePanel();
+    public static final GamePanel gamePanel = new GamePanel();
     public GameFrame() {
         setTitle("Game");
         this.getContentPane().setPreferredSize(new Dimension(GAME_PANEL_WIDTH, GAME_PANEL_HEIGHT));

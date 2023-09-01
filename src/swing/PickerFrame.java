@@ -1,13 +1,12 @@
-package Swing;
+package swing;
 
 import javax.swing.*;
 import java.awt.*;
 
-import static Swing.EditorFrame.editorPanel;
-import static Swing.PickerPanel.PICKER_PANEL_WIDTH;
-import static Swing.PickerPanel.PICKER_PANEL_HEIGHT;
+import static swing.PickerPanel.PICKER_PANEL_WIDTH;
+import static swing.PickerPanel.PICKER_PANEL_HEIGHT;
 public class PickerFrame extends JFrame {
-    public static PickerPanel pickerPanel = new PickerPanel();
+    public static final PickerPanel pickerPanel = new PickerPanel();
     public PickerFrame() {
         setTitle("Picker");
         this.getContentPane().setPreferredSize(new Dimension((int) PICKER_PANEL_WIDTH, (int) PICKER_PANEL_HEIGHT));

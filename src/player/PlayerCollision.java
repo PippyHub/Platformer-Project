@@ -1,32 +1,32 @@
-package Player;
+package player;
 
-import Levels.LevelsTiles;
+import levels.LevelsTiles;
 
-import static Levels.Levels.TILE_WIDTH;
-import static Levels.Levels.TILE_HEIGHT;
-import static Levels.Levels.tc;
-import static Player.Player.PLAYER_WIDTH;
-import static Player.Player.PLAYER_HEIGHT;
-import static Swing.GamePanel.GAME_PANEL_WIDTH;
-import static Swing.GamePanel.GAME_PANEL_HEIGHT;
+import static levels.Levels.TILE_WIDTH;
+import static levels.Levels.TILE_HEIGHT;
+import static levels.Levels.tc;
+import static player.Player.PLAYER_WIDTH;
+import static player.Player.PLAYER_HEIGHT;
+import static swing.GamePanel.GAME_PANEL_WIDTH;
+import static swing.GamePanel.GAME_PANEL_HEIGHT;
 
 public class PlayerCollision {
-    Player player;
+    final Player player;
     public PlayerCollision(Player player) {
         this.player = player;
     }
     public boolean xCollision(float newX) {
         if (newX < 0 || newX + PLAYER_WIDTH > GAME_PANEL_WIDTH) {
-            return true;
+            return false;
         }
         for (LevelsTiles tile : tc) {
             if (newX < tile.tX + TILE_WIDTH && newX + PLAYER_WIDTH > tile.tX) {
                 if (player.y < tile.tY + TILE_HEIGHT && player.y + PLAYER_HEIGHT > tile.tY) {
-                    return true;
+                    return false;
                 }
             }
         }
-        return false;
+        return true;
     }
     public boolean yCollision(float newY) {
         if (newY < 0 || newY + PLAYER_HEIGHT > GAME_PANEL_HEIGHT) {

@@ -3,8 +3,8 @@ import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-import Swing.GameFrame;
-import Swing.EditorFrame;
+import swing.GameFrame;
+import swing.EditorFrame;
 
 public class Main {
     static JFrame splashFrame;

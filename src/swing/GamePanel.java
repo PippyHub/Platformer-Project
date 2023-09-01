@@ -1,15 +1,15 @@
-package Swing;
+package swing;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-import Levels.Levels;
-import Levels.LevelsRender;
-import Player.Player;
-import Player.PlayerInput;
-import Player.PlayerEvent;
-import Player.PlayerRender;
+import levels.Levels;
+import levels.LevelsRender;
+import player.Player;
+import player.PlayerInput;
+import player.PlayerEvent;
+import player.PlayerRender;
 
 public class GamePanel extends JPanel implements ActionListener, KeyListener, MouseListener, MouseMotionListener {
     public static final int GAME_PANEL_WIDTH = 1280;

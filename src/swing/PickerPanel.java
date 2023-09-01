@@ -1,4 +1,4 @@
-package Swing;
+package swing;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -8,8 +8,8 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-import Editor.Picker.PickerInput;
-import static Images.TileMapImage.*;
+import editor.picker.PickerInput;
+import static images.TileMapImage.*;
 
 public class PickerPanel extends JPanel implements ActionListener, KeyListener, MouseListener, MouseMotionListener {
     public static final float PICKER_PANEL_WIDTH = 400;

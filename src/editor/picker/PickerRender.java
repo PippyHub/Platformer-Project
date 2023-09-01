@@ -1,4 +1,4 @@
-package Editor.Picker;
+package editor.picker;
 
 public class PickerRender {
     public PickerRender() {

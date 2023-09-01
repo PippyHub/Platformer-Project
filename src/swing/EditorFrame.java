@@ -1,19 +1,19 @@
-package Swing;
+package swing;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-import Editor.EditorInput;
+import editor.EditorInput;
 
-import static Swing.EditorPanel.EDITOR_PANEL_WIDTH;
-import static Swing.EditorPanel.EDITOR_PANEL_HEIGHT;
+import static swing.EditorPanel.EDITOR_PANEL_WIDTH;
+import static swing.EditorPanel.EDITOR_PANEL_HEIGHT;
 public class EditorFrame extends JFrame implements ActionListener {
     public static EditorPanel editorPanel;
     public static PickerFrame pickerFrame;
     public EditorFrame() {
         editorPanel = new EditorPanel();
-        setTitle("Editor");
+        setTitle("editor");
         this.getContentPane().setPreferredSize(new Dimension(EDITOR_PANEL_WIDTH, EDITOR_PANEL_HEIGHT));
 
         contents();
@@ -60,7 +60,7 @@ public class EditorFrame extends JFrame implements ActionListener {
         menu = new JMenu("Objects");
         menuBar.add(menu);
 
-        menuItem = new JMenuItem("Levels");
+        menuItem = new JMenuItem("levels");
         menuItem.addActionListener(this);
         menu.add(menuItem);
 
@@ -74,7 +74,7 @@ public class EditorFrame extends JFrame implements ActionListener {
             case "Load" -> System.out.println(2);
             case "Delete" -> EditorInput.setBrushType(EditorInput.BrushType.DELETE_BRUSH);
             case "Paint" -> EditorInput.setBrushType(EditorInput.BrushType.PAINT_BRUSH);
-            case "Levels" -> openPickerFrame();
+            case "levels" -> openPickerFrame();
         }
     }
     private void openPickerFrame() {

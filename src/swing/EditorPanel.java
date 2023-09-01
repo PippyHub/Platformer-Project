@@ -1,15 +1,15 @@
-package Swing;
+package swing;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-import Editor.EditorEvent;
-import Editor.EditorInput;
-import Editor.EditorRender;
-import Levels.Levels;
+import editor.EditorEvent;
+import editor.EditorInput;
+import editor.EditorRender;
+import levels.Levels;
 
-import static Swing.GamePanel.FRAMES_PER_SECOND;
+import static swing.GamePanel.FRAMES_PER_SECOND;
 public class EditorPanel extends JPanel implements ActionListener, KeyListener, MouseListener, MouseMotionListener {
     public static final int EDITOR_PANEL_WIDTH = 1280;
     public static final int EDITOR_PANEL_HEIGHT = 768;
