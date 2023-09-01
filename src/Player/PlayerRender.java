@@ -7,7 +7,7 @@ import Swing.GamePanel;
 
 import static Player.Player.PLAYER_WIDTH;
 import static Player.Player.PLAYER_HEIGHT;
-public class RenderPlayer {
+public class PlayerRender {
     Player player;
     GamePanel gamePanel;
     private static final Image[] playerImg;
@@ -15,9 +15,9 @@ public class RenderPlayer {
         PlayerImage playerImage = new PlayerImage();
         playerImg = playerImage.loadImages();
     }
-    public RenderPlayer(GamePanel gamePanel, Player player) {
-        this.player = player;
+    public PlayerRender(GamePanel gamePanel, Player player) {
         this.gamePanel = gamePanel;
+        this.player = player;
     }
     public void render(Graphics g) {
         g.drawImage(playerImg[0], (int) player.x, (int) player.y, gamePanel);

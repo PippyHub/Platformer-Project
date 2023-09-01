@@ -6,14 +6,19 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
-import static Terrain.Levels.TILE_SIZE;
+import static Levels.Levels.TILE_WIDTH;
+import static Levels.Levels.TILE_HEIGHT;
+
 public class TileMapImage {
-    final int SUB_IMAGE_SIZE = 100;
-    final int TILE_AMOUNT_HORIZONTAL = 2;
-    final int TILE_AMOUNT_VERTICAL = 1;
-    final int IMAGE_AMOUNT = TILE_AMOUNT_HORIZONTAL * TILE_AMOUNT_VERTICAL;
-    final int IMAGE_WIDTH = SUB_IMAGE_SIZE * TILE_AMOUNT_HORIZONTAL;
-    final int IMAGE_HEIGHT = SUB_IMAGE_SIZE * TILE_AMOUNT_VERTICAL;
+    public static final int TILE_MAP_PNG_WIDTH = 1000;
+    public static final int TILE_MAP_PNG_HEIGHT = 1000;
+    public static final int SUB_IMAGE_WIDTH = 100;
+    public static final int SUB_IMAGE_HEIGHT = 100;
+    static final int TILE_AMOUNT_HORIZONTAL = 2;
+    static final int TILE_AMOUNT_VERTICAL = 1;
+    public static final int IMAGE_AMOUNT = TILE_AMOUNT_HORIZONTAL * TILE_AMOUNT_VERTICAL;
+    public static final int IMAGE_WIDTH = SUB_IMAGE_WIDTH * TILE_AMOUNT_HORIZONTAL;
+    public static final int IMAGE_HEIGHT = SUB_IMAGE_HEIGHT * TILE_AMOUNT_VERTICAL;
     private final Image[] images;
     public TileMapImage() {
         images = new Image[IMAGE_AMOUNT];
@@ -22,10 +27,10 @@ public class TileMapImage {
         try {
             BufferedImage all = ImageIO.read(new File("src/Images/TileMap.png"));
             int index = 0;
-            for (int y = 0; y < IMAGE_HEIGHT; y += SUB_IMAGE_SIZE){
-                for (int x = 0; x < IMAGE_WIDTH; x += SUB_IMAGE_SIZE) {
-                    images[index] = all.getSubimage(x, y, SUB_IMAGE_SIZE, SUB_IMAGE_SIZE)
-                            .getScaledInstance(TILE_SIZE, TILE_SIZE, BufferedImage.SCALE_SMOOTH);
+            for (int y = 0; y < IMAGE_HEIGHT; y += SUB_IMAGE_HEIGHT){
+                for (int x = 0; x < IMAGE_WIDTH; x += SUB_IMAGE_WIDTH) {
+                    images[index] = all.getSubimage(x, y, SUB_IMAGE_WIDTH, SUB_IMAGE_HEIGHT)
+                            .getScaledInstance(TILE_WIDTH, TILE_HEIGHT, BufferedImage.SCALE_SMOOTH);
                     index++;
                 }
             }

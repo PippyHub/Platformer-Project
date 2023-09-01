@@ -1,11 +1,12 @@
-package Terrain;
+package Levels;
 
 import java.util.LinkedList;
-public class Tile {
-    LinkedList<Tile> tc;
+
+public class LevelsTiles {
+    LinkedList<LevelsTiles> tc;
     public int tX;
     public int tY;
-    public Tile(int tX, int tY, LinkedList<Tile> tc) {
+    public LevelsTiles(int tX, int tY, LinkedList<LevelsTiles> tc) {
         this.tX = tX;
         this.tY = tY;
         this.tc = tc;

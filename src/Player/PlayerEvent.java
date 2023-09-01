@@ -1,10 +1,11 @@
 package Player;
 
 import Swing.GamePanel;
-public class Event {
+
+public class PlayerEvent {
     Player player;
     GamePanel gamePanel;
-    public Event(GamePanel gamePanel) {
+    public PlayerEvent(GamePanel gamePanel) {
         this.player = gamePanel.player;
         this.gamePanel = gamePanel;
     }

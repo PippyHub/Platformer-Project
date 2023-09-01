@@ -8,6 +8,7 @@ import javax.imageio.ImageIO;
 
 import static Player.Player.PLAYER_WIDTH;
 import static Player.Player.PLAYER_HEIGHT;
+
 public class PlayerImage {
     final int IMAGE_WIDTH = 100;
     final int IMAGE_HEIGHT = 200;

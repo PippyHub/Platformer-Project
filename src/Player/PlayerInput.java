@@ -6,14 +6,13 @@ import java.util.Set;
 
 import Swing.GamePanel;
 
-public class Input {
+public class PlayerInput {
     final int PLAYER_SPEED = 5;
     Player player;
     GamePanel gamePanel;
     Set<Integer> pressedKeys = new HashSet<>();
     boolean upKeyWasPressed = false;
-
-    public Input(GamePanel gamePanel) {
+    public PlayerInput(GamePanel gamePanel) {
         this.player = gamePanel.player;
         this.gamePanel = gamePanel;
     }

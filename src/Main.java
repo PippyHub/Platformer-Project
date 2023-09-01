@@ -1,91 +1,95 @@
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import Swing.GameFrame;
 import Swing.EditorFrame;
+
 public class Main {
+    static JFrame splashFrame;
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            JDialog loadingDialog = createLoadingDialog();
-            loadingDialog.setVisible(true);
-            JProgressBar progressBar = new JProgressBar(0, 100);
-            SwingWorker<Void, Integer> worker = new SwingWorker<>() {
-                @Override
-                protected Void doInBackground() throws Exception {
-                    for (int progress = 0; progress <= 100; progress++) {
-                        Thread.sleep(20); // Simulate some loading process
-                        publish(progress); // Publish progress to update the bar
-                    }
-                    return null;
-                }
-
-                @Override
-                protected void process(java.util.List<Integer> chunks) {
-                    for (int progress : chunks) {
-                        progressBar.setValue(progress);
-                    }
-                }
-
-                @Override
-                protected void done() {
-                    loadingDialog.dispose();
-                    showMainDialog();
-                }
-            };
-            worker.execute();
+            splashFrame = createSplashScreen();
+            splashFrame.setVisible(true);
         });
     }
-    private static JDialog createLoadingDialog() {
-        JDialog loadingDialog = new JDialog();
-        loadingDialog.setTitle("Loading...");
-        loadingDialog.setSize(200, 100);
-        loadingDialog.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
-        loadingDialog.setResizable(false);
-
-        JProgressBar progressBar = new JProgressBar(0, 100);
-        progressBar.setIndeterminate(true); // Use an indeterminate style
-
-        loadingDialog.add(progressBar);
-        loadingDialog.setLocationRelativeTo(null);
-
-        return loadingDialog;
-    }
-    private static void showMainDialog() {
-        final int DIALOGUE_WIDTH = 100;
-        final int DIALOGUE_HEIGHT = 140;
-
-        JDialog mainDialog = new JDialog();
-        mainDialog.setSize(DIALOGUE_WIDTH, DIALOGUE_HEIGHT);
-        mainDialog.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
-
-        JButton openGameButton = new JButton("Play");
-        JButton openEditorButton = new JButton("Level Editor");
-        JButton closeButton = new JButton("Close");
-
-        openGameButton.addActionListener(e -> {
-            mainDialog.dispose();
-            new GameFrame();
-        });
-        openEditorButton.addActionListener(e -> {
-            mainDialog.dispose();
-            new EditorFrame();
-        });
-        closeButton.addActionListener(e -> mainDialog.dispose());
+    private static JFrame createSplashScreen() {
+        JFrame splashFrame = new JFrame("Splash Screen");
+        splashFrame.setSize(400, 200);
+        splashFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        splashFrame.setResizable(false);
 
         JPanel panel = new JPanel();
-        panel.setLayout(null);
+        panel.setLayout(new BorderLayout());
 
+        JLabel splashLabel = new JLabel("Welcome to Your Game!");
+        splashLabel.setHorizontalAlignment(JLabel.CENTER);
+        panel.add(splashLabel, BorderLayout.CENTER);
 
-        openGameButton.setBounds(0, 10, 100, 30);
-        openEditorButton.setBounds(0, 40, 100, 30);
-        closeButton.setBounds(0, 70, 100, 30);
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.Y_AXIS));
 
-        panel.add(closeButton);
-        panel.add(openGameButton);
-        panel.add(openEditorButton);
-        mainDialog.add(panel);
+        JButton playButton = new JButton("Play");
+        JButton editorButton = new JButton("Level Editor");
+        JButton closeButton = new JButton("Close");
 
-        mainDialog.setLocationRelativeTo(null);
-        mainDialog.setResizable(false);
-        mainDialog.setVisible(true);
+        playButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        editorButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        closeButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        playButton.setMaximumSize(new Dimension(200, 40));
+        editorButton.setMaximumSize(new Dimension(200, 40));
+        closeButton.setMaximumSize(new Dimension(200, 40));
+
+        playButton.addActionListener(e -> {
+            startGame();
+            splashFrame.dispose();
+        });
+
+        editorButton.addActionListener(e -> {
+            startEditor();
+            splashFrame.dispose();
+        });
+
+        closeButton.addActionListener(e -> {
+            splashFrame.dispose();
+            System.exit(0);
+        });
+
+        buttonPanel.add(playButton);
+        buttonPanel.add(editorButton);
+        buttonPanel.add(closeButton);
+
+        panel.add(buttonPanel, BorderLayout.SOUTH);
+
+        splashFrame.add(panel);
+        splashFrame.setLocationRelativeTo(null);
+
+        return splashFrame;
+    }
+    private static void startGame() {
+        GameFrame gameFrame = new GameFrame();
+        gameFrame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                gameFrame.dispose();
+                splashFrame = createSplashScreen();
+                splashFrame.setVisible(true);
+            }
+        });
+    }
+    private static void startEditor() {
+        EditorFrame editorFrame = new EditorFrame();
+        editorFrame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                editorFrame.dispose();
+                EditorFrame.pickerFrame.dispose();
+                EditorFrame.pickerFrame = null;
+                splashFrame = createSplashScreen();
+                splashFrame.setVisible(true);
+            }
+        });
     }
 }

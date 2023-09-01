@@ -1,9 +1,11 @@
-package Terrain;
+package Levels;
 
 import java.awt.*;
+
 import Images.TileMapImage;
 import Swing.GamePanel;
-public class RenderLevels {
+
+public class LevelsRender {
     GamePanel gamePanel;
     private final int[][] mapData;
     private static final Image[] tileMapImg;
@@ -11,13 +13,12 @@ public class RenderLevels {
         TileMapImage tileMapImage = new TileMapImage();
         tileMapImg = tileMapImage.loadImages();
     }
-
-    public RenderLevels(GamePanel gamePanel, int[][] mapData) {
-        this.mapData = mapData;
+    public LevelsRender(GamePanel gamePanel, int[][] mapData) {
         this.gamePanel = gamePanel;
+        this.mapData = mapData;
     }
-
     public void render(Graphics g) {
+        if (mapData == null) return;
         for (int y = 0; y < mapData.length; y++) {
             for (int x = 0; x < mapData[y].length; x++) {
                 int tileIndex = mapData[y][x];

@@ -1,25 +1,27 @@
 package Player;
 
-import Terrain.Tile;
+import Levels.LevelsTiles;
 
+import static Levels.Levels.TILE_WIDTH;
+import static Levels.Levels.TILE_HEIGHT;
+import static Levels.Levels.tc;
 import static Player.Player.PLAYER_WIDTH;
 import static Player.Player.PLAYER_HEIGHT;
-import static Swing.GamePanel.PANEL_WIDTH;
-import static Swing.GamePanel.PANEL_HEIGHT;
-import static Terrain.Levels.TILE_SIZE;
-import static Terrain.Levels.tc;
+import static Swing.GamePanel.GAME_PANEL_WIDTH;
+import static Swing.GamePanel.GAME_PANEL_HEIGHT;
+
 public class PlayerCollision {
     Player player;
     public PlayerCollision(Player player) {
         this.player = player;
     }
     public boolean xCollision(float newX) {
-        if (newX < 0 || newX + PLAYER_WIDTH > PANEL_WIDTH) {
+        if (newX < 0 || newX + PLAYER_WIDTH > GAME_PANEL_WIDTH) {
             return true;
         }
-        for (Tile tile : tc) {
-            if (newX < tile.tX + TILE_SIZE && newX + PLAYER_WIDTH > tile.tX) {
-                if (player.y < tile.tY + TILE_SIZE && player.y + PLAYER_HEIGHT > tile.tY) {
+        for (LevelsTiles tile : tc) {
+            if (newX < tile.tX + TILE_WIDTH && newX + PLAYER_WIDTH > tile.tX) {
+                if (player.y < tile.tY + TILE_HEIGHT && player.y + PLAYER_HEIGHT > tile.tY) {
                     return true;
                 }
             }
@@ -27,12 +29,12 @@ public class PlayerCollision {
         return false;
     }
     public boolean yCollision(float newY) {
-        if (newY < 0 || newY + PLAYER_HEIGHT > PANEL_HEIGHT) {
+        if (newY < 0 || newY + PLAYER_HEIGHT > GAME_PANEL_HEIGHT) {
             return true;
         }
-        for (Tile tile : tc) {
-            if (newY < tile.tY + TILE_SIZE && newY + PLAYER_HEIGHT > tile.tY) {
-                if (player.x < tile.tX + TILE_SIZE && player.x + PLAYER_WIDTH > tile.tX) {
+        for (LevelsTiles tile : tc) {
+            if (newY < tile.tY + TILE_HEIGHT && newY + PLAYER_HEIGHT > tile.tY) {
+                if (player.x < tile.tX + TILE_WIDTH && player.x + PLAYER_WIDTH > tile.tX) {
                     return true;
                 }
             }
