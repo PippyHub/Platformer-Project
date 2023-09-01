@@ -16,14 +16,15 @@ public class EditorPanel extends JPanel implements ActionListener, KeyListener, 
     EditorEvent editorEvent;
     EditorInput editorInput;
     EditorRender editorRender;
-    public Levels levels;
+    public Levels level;
     public EditorPanel() {
         loadGame();
-        addMouseListener(this);
         addKeyListener(this);
+        addMouseListener(this);
+        addMouseMotionListener(this);
     }
     public void loadGame() {
-        levels = new Levels();
+        level = new Levels();
         loadTimer();
         loadListeners();
         loadRender();
@@ -38,7 +39,7 @@ public class EditorPanel extends JPanel implements ActionListener, KeyListener, 
         editorInput = new EditorInput(this);
     }
     public void loadRender() {
-        editorRender = new EditorRender(this, levels.currentLevel);
+        editorRender = new EditorRender(this, level.currentLevel);
     }
     public void paint(Graphics g) {
         editorRender.render(g);
@@ -56,13 +57,13 @@ public class EditorPanel extends JPanel implements ActionListener, KeyListener, 
     @Override
     public void mousePressed(MouseEvent e) { editorInput.mousePressed(e); }
     @Override
-    public void mouseReleased(MouseEvent e) {}
+    public void mouseReleased(MouseEvent e) { editorInput.mouseReleased(e); }
     @Override
     public void mouseEntered(MouseEvent e) {}
     @Override
     public void mouseExited(MouseEvent e) {}
     @Override
-    public void mouseDragged(MouseEvent e) {}
+    public void mouseDragged(MouseEvent e) { editorInput.mouseDragged(e); }
     @Override
     public void mouseMoved(MouseEvent e) {}
 }

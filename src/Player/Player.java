@@ -1,27 +1,48 @@
 package Player;
 
 import Levels.Levels;
+
 public class Player {
     public static final int PLAYER_WIDTH = 40;
     public static final int PLAYER_HEIGHT = 60;
     final int TERMINAL_VELOCITY = 30;
     final float GRAVITY = 0.5f;
     PlayerCollision playerCollision;
-    Levels levels;
+    Levels level;
     private boolean isJumping = false;
     float x, y;
     private float speedX, speedY;
-    public Player(int x, int y, Levels levels) {
+    public Player(int x, int y, Levels level) {
         this.x = x;
         this.y = y;
-        this.levels = levels;
+        this.level = level;
         this.playerCollision = new PlayerCollision(this);
         this.speedX = 0;
         this.speedY = 0;
     }
     public void move() {
         float newX = x + speedX;
-        if (!playerCollision.xCollision(newX)) x = newX;
+        if (!playerCollision.xCollision(newX)) {
+            x = newX;
+        } else {
+            float distanceToCollision = 0;
+            if (speedX > 0) {
+                for (float i = speedX; i > 0; i--) {
+                    if (!playerCollision.xCollision(x + i)) {
+                        distanceToCollision = i;
+                        break;
+                    }
+                }
+            } else {
+                for (float i = speedX; i < 0; i++) {
+                    if (!playerCollision.xCollision(x + i)) {
+                        distanceToCollision = i;
+                        break;
+                    }
+                }
+            }
+            x += distanceToCollision;
+        }
     }
     public void jump() {
         if (!isJumping && playerCollision.yCollision(y + 1)) {

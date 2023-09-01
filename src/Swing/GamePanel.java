@@ -19,15 +19,15 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener, Mo
     private PlayerEvent event;
     private PlayerInput input;
     public PlayerRender playerRender;
-    Levels levels;
+    Levels level;
     public LevelsRender renderLevels;
     public GamePanel() {
         addKeyListener(this);
         loadGame();
     }
     public void loadGame() {
-        levels = new Levels();
-        player = new Player(450, 100, levels);
+        level = new Levels();
+        player = new Player(450, 100, level);
         loadTimer();
         loadListeners();
         loadRender();
@@ -42,7 +42,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener, Mo
         input = new PlayerInput(this);
     }
     public void loadRender() {
-        renderLevels = new LevelsRender(this, levels.currentLevel);
+        renderLevels = new LevelsRender(this, level.currentLevel);
         playerRender = new PlayerRender(this, player);
     }
     public void paint(Graphics g) {

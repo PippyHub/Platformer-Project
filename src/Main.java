@@ -85,8 +85,10 @@ public class Main {
             @Override
             public void windowClosing(WindowEvent e) {
                 editorFrame.dispose();
-                EditorFrame.pickerFrame.dispose();
-                EditorFrame.pickerFrame = null;
+                if (EditorFrame.pickerFrame != null) {
+                    EditorFrame.pickerFrame.dispose();
+                    EditorFrame.pickerFrame = null;
+                }
                 splashFrame = createSplashScreen();
                 splashFrame.setVisible(true);
             }

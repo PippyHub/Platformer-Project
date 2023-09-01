@@ -6,36 +6,61 @@ import javax.swing.*;
 import Levels.Levels;
 import Levels.LevelsTiles;
 import Swing.EditorPanel;
+import static Editor.Picker.PickerInput.pickedTile;
+import static Levels.Levels.*;
+import static Swing.EditorPanel.EDITOR_PANEL_HEIGHT;
+import static Swing.EditorPanel.EDITOR_PANEL_WIDTH;
 
 public class EditorInput {
     public enum BrushType {
-        SELECT_BRUSH, DELETE_BRUSH, PAINT_BRUSH
+        DELETE_BRUSH, PAINT_BRUSH
     }
-    static BrushType brushType = BrushType.SELECT_BRUSH;
-    Levels levels;
+    static BrushType brushType = BrushType.PAINT_BRUSH;
+    Levels level;
     EditorPanel editorPanel;
     public EditorInput(EditorPanel editorPanel) {
-        this.levels = editorPanel.levels;
+        this.level = editorPanel.level;
         this.editorPanel = editorPanel;
     }
     public void deleteBrush(MouseEvent e) {
         LevelsTiles t = Levels.getTile(e.getX(), e.getY());
         if (t != null) {
-            levels.currentLevel[t.tY][t.tX] = -1;
+            level.currentLevel[t.tY][t.tX] = -1;
         }
     }
-    public void paintBrush() {
-
+    public void paintBrush(MouseEvent e) {
+        LevelsTiles t = Levels.getTile(e.getX(), e.getY());
+        tc.remove(t);
+        int x = (e.getX() / TILE_WIDTH ) * TILE_WIDTH;
+        int y = (e.getY() / TILE_HEIGHT) * TILE_HEIGHT;
+        if (x >= 0 && y >= 0 && x < EDITOR_PANEL_WIDTH  && y < EDITOR_PANEL_HEIGHT) {
+            level.currentLevel[y][x] = pickedTile;
+        }
     }
     public static void setBrushType(BrushType brushType) {
         EditorInput.brushType = brushType;
     }
+    private boolean isMousePressed = false;
     public void mousePressed(MouseEvent e) {
         if (SwingUtilities.isLeftMouseButton(e)) {
-            switch (brushType) {
-                case DELETE_BRUSH -> deleteBrush(e);
-                case PAINT_BRUSH -> paintBrush();
-            }
+            isMousePressed = true;
+            handleBrushType(e);
+        }
+    }
+    public void mouseReleased(MouseEvent e) {
+        if (SwingUtilities.isLeftMouseButton(e)) {
+            isMousePressed = false;
+        }
+    }
+    public void mouseDragged(MouseEvent e) {
+        if (isMousePressed && SwingUtilities.isLeftMouseButton(e)) {
+            handleBrushType(e);
+        }
+    }
+    private void handleBrushType(MouseEvent e) {
+        switch (brushType) {
+            case DELETE_BRUSH -> deleteBrush(e);
+            case PAINT_BRUSH -> paintBrush(e);
         }
     }
 }

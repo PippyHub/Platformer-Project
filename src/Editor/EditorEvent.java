@@ -1,6 +1,9 @@
 package Editor;
 
+import Levels.LevelsCollision;
 import Swing.EditorPanel;
+
+import static Levels.Levels.tc;
 
 public class EditorEvent {
     EditorPanel editorPanel;
@@ -8,6 +11,8 @@ public class EditorEvent {
         this.editorPanel = editorPanel;
     }
     public void actionPerformed() {
+        tc.clear();
+        LevelsCollision.addHitBox(tc);
         editorPanel.repaint();
     }
 }

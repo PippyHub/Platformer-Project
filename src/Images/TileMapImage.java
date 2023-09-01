@@ -6,9 +6,6 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
-import static Levels.Levels.TILE_WIDTH;
-import static Levels.Levels.TILE_HEIGHT;
-
 public class TileMapImage {
     public static final int TILE_MAP_PNG_WIDTH = 1000;
     public static final int TILE_MAP_PNG_HEIGHT = 1000;
@@ -30,7 +27,7 @@ public class TileMapImage {
             for (int y = 0; y < IMAGE_HEIGHT; y += SUB_IMAGE_HEIGHT){
                 for (int x = 0; x < IMAGE_WIDTH; x += SUB_IMAGE_WIDTH) {
                     images[index] = all.getSubimage(x, y, SUB_IMAGE_WIDTH, SUB_IMAGE_HEIGHT)
-                            .getScaledInstance(TILE_WIDTH, TILE_HEIGHT, BufferedImage.SCALE_SMOOTH);
+                            .getScaledInstance(32, 32, BufferedImage.SCALE_SMOOTH);
                     index++;
                 }
             }

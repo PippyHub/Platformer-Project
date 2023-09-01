@@ -5,37 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1be4e55a-2a87-40de-92e7-f0b6f5ae703e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Editor/EditorEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Editor/EditorInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Editor/EditorRender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Editor/Picker/PickerInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Editor/Picker/PickerRender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Levels/Levels.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Levels/csv/Level1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Levels/csv/Level2.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Levels/csv/LevelsReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Levels/csv/LevelsWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Swing/PickerFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Swing/PickerPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/csv-editor.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Images/PlayerImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Images/PlayerImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Editor/EditorEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Editor/EditorEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Editor/EditorInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Editor/EditorInput.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Images/TileMapImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Images/TileMapImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Levels/LevelsCollision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Levels/LevelsCollision.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Levels/csv/Level1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/Levels/csv/Level1.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/PlayerEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/PlayerInput.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player/PlayerCollision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/PlayerCollision.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player/RenderPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/PlayerRender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Swing/EditorFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/EditorFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Swing/EditorPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/EditorPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Swing/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/GameFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Swing/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Terrain/Level1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Terrain/Level2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Terrain/Levels.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Terrain/RenderLevels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Levels/LevelsRender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Terrain/TerrainCollision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Levels/LevelsCollision.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Terrain/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Levels/LevelsTiles.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +57,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_opened_file_path": "/Users/miguel/Computer Science/IntelliJ IDEA/Platformer Project/src/Levels",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
@@ -200,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693392633925</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added block picker">
+      <created>1693565528516</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1693565528516</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -228,6 +218,7 @@
     <MESSAGE value="Gravity and jump" />
     <MESSAGE value="2d platformer base" />
     <MESSAGE value="Dialogue box splash screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dialogue box splash screen" />
+    <MESSAGE value="Added block picker" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added block picker" />
   </component>
 </project>
