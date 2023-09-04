@@ -5,7 +5,7 @@ import swing.PickerPanel;
 import javax.swing.*;
 import java.awt.event.MouseEvent;
 
-import static images.TileMapImage.*;
+import static image.TileMapImage.*;
 import static swing.PickerPanel.*;
 
 public class PickerInput {

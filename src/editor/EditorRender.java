@@ -2,7 +2,7 @@ package editor;
 
 import java.awt.*;
 
-import images.TileMapImage;
+import image.TileMapImage;
 import swing.EditorPanel;
 
 public class EditorRender {

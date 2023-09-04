@@ -2,7 +2,7 @@ package levels;
 
 import java.awt.*;
 
-import images.TileMapImage;
+import image.TileMapImage;
 import swing.GamePanel;
 
 public class LevelsRender {

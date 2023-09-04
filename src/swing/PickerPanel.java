@@ -9,7 +9,7 @@ import java.io.File;
 import java.io.IOException;
 
 import editor.picker.PickerInput;
-import static images.TileMapImage.*;
+import static image.TileMapImage.*;
 
 public class PickerPanel extends JPanel implements ActionListener, KeyListener, MouseListener, MouseMotionListener {
     public static final float PICKER_PANEL_WIDTH = 400;
@@ -32,7 +32,7 @@ public class PickerPanel extends JPanel implements ActionListener, KeyListener, 
     public void paint(Graphics g) {
         BufferedImage image = null;
         try {
-            image = ImageIO.read(new File("src/Images/TileMap.png"));
+            image = ImageIO.read(new File("src/Image/TileMap.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }

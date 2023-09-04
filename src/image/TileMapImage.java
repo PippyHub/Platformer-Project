@@ -1,4 +1,4 @@
-package images;
+package image;
 
 import java.awt.Image;
 import java.awt.image.BufferedImage;
@@ -22,7 +22,7 @@ public class TileMapImage {
     }
     public Image[] loadImages() {
         try {
-            BufferedImage all = ImageIO.read(new File("src/Images/TileMap.png"));
+            BufferedImage all = ImageIO.read(new File("src/image/TileMap.png"));
             int index = 0;
             for (int y = 0; y < IMAGE_HEIGHT; y += SUB_IMAGE_HEIGHT){
                 for (int x = 0; x < IMAGE_WIDTH; x += SUB_IMAGE_WIDTH) {

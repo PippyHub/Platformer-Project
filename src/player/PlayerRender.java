@@ -2,7 +2,7 @@ package player;
 
 import java.awt.*;
 
-import images.PlayerImage;
+import image.PlayerImage;
 import swing.GamePanel;
 
 import static player.Player.PLAYER_WIDTH;

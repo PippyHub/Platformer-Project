@@ -1,4 +1,4 @@
-package images;
+package image;
 
 import java.awt.Image;
 import java.awt.image.BufferedImage;
@@ -21,7 +21,7 @@ public class PlayerImage {
     }
     public Image[] loadImages() {
         try {
-            BufferedImage all = ImageIO.read(new File("src/Images/Player.png"));
+            BufferedImage all = ImageIO.read(new File("src/image/Player.png"));
             int index = 0;
             for (int x = 0; x < IMAGE_WIDTH; x += SUB_IMAGE_WIDTH) {
                 images[index] = all.getSubimage(x, 0, SUB_IMAGE_WIDTH, SUB_IMAGE_HEIGHT)

@@ -4,39 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1be4e55a-2a87-40de-92e7-f0b6f5ae703e" name="Changes" comment="Fixed horizontal collision">
-      <change afterPath="$PROJECT_DIR$/src/levels/Levels.java" afterDir="false" />
+    <list default="true" id="1be4e55a-2a87-40de-92e7-f0b6f5ae703e" name="Changes" comment="package renaming">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Editor/EditorEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/editor/EditorEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Editor/EditorInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/editor/EditorInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Editor/EditorRender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/editor/EditorRender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Editor/Picker/PickerInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/editor/picker/PickerInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Editor/Picker/PickerRender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/editor/picker/PickerRender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Images/Player.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/Player.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Images/PlayerImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/PlayerImage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Images/TileMap.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/TileMap.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Images/TileMapImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/TileMapImage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Levels/Levels.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Levels/LevelsCollision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/levels/LevelsCollision.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Levels/LevelsRender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/levels/LevelsRender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Levels/LevelsTiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/levels/LevelsTiles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Levels/csv/Level1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/levels/csv/Level1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Levels/csv/Level2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/levels/csv/Level2.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Levels/csv/LevelsReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/levels/csv/LevelsReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Levels/csv/LevelsWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/levels/csv/LevelsWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/player/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player/PlayerCollision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/player/PlayerCollision.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player/PlayerEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/player/PlayerEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player/PlayerInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/player/PlayerInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player/PlayerRender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/player/PlayerRender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Swing/EditorFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swing/EditorFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Swing/EditorPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swing/EditorPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Swing/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swing/GameFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Swing/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swing/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Swing/PickerFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swing/PickerFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Swing/PickerPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swing/PickerPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/editor/EditorRender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/editor/EditorRender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/editor/picker/PickerInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/editor/picker/PickerInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/Player.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/Player.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/PlayerImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/PlayerImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/TileMap.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/TileMap.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/TileMapImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/TileMapImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/levels/LevelsRender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/levels/LevelsRender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/player/PlayerRender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/player/PlayerRender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swing/PickerPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swing/PickerPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +43,7 @@
   </component>
   <component name="ProblemsViewState">
     <option name="autoscrollToSource" value="true" />
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2UZPlKCEID9FHd6ddNa1ZtmsLAw" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -219,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693578655433</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="package renaming">
+      <created>1693581067090</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1693581067090</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -249,6 +235,7 @@
     <MESSAGE value="Dialogue box splash screen" />
     <MESSAGE value="Added block picker" />
     <MESSAGE value="Fixed horizontal collision" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed horizontal collision" />
+    <MESSAGE value="package renaming" />
+    <option name="LAST_COMMIT_MESSAGE" value="package renaming" />
   </component>
 </project>
